@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>判断是上滚还是下滚</title>
+	<link rel="stylesheet" href="">
+	<script src="jquery-2.1.0.min.js"></script>
+	<style>
+		.test{
+			width: 300px;
+			height: 300px;
+			overflow: auto;
+		}
+		.btn{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="test">
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+		<p>2222</p>
+	</div>
+	<button class="btn">点击</button>
+
+
+	<script>
+		var p=0,t=0;  
+  
+	    $('.test').scroll(function(e){  
+            p = $(this).scrollTop();  
+              
+            if(t<=p){//下滚  
+            	console.log('下');
+            	$('.btn').hide();
+            }  
+              
+            else{//上滚  
+            	
+            	console.log('上');
+            	if($('.test').scrollTop() == 0){
+			    	$('.btn').hide()
+			    }else{
+			    	$('.btn').show()
+			    }  
+
+            }  
+            setTimeout(function(){t = p;},0);  
+	    });  
+
+	    $('.btn').click(function(){
+	    	$('.test').scrollTop(0);
+	    })
+
+	</script>
+</body>
+</html>

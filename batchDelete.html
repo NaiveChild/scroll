@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>批量删除数组里的元素</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// 删除arr1里和arr一样的值，批量删除数组里的元素
+		var arr = [2,3,4,6];
+		var arr1 = [1,2,3,4,5,6,7,8,9];
+
+		// 方法1
+		// arr.map(function(value){
+		// 	arr1.splice(arr1.indexOf(value),1);
+		// })
+
+		// 方法2
+		// arr.map(function(value){
+		// 	delete arr1[arr1.indexOf(value)];
+		// })
+
+		// console.log(arr1);
+
+
+		// 删除objArr里key值和key一样的对象，批量删除数组里的元素
+		var key = [1,3,4,6];
+		var objArr = [{key:1,name:'jack'},{key:2,name:'jack2'},{key:3,name:'jack3'},{key:4,name:'jack4'},{key:5,name:'jack5'},{key:6,name:'jack6'}];
+
+		// 方法1
+		// key.map(function(key){
+		// 	objArr.map(function(item,index){
+		// 		if(item.key == key){
+		// 			delete objArr[index];
+		// 		}
+		// 	})
+		// })
+
+		// 方法2
+		key.map(function(key){
+			objArr.map(function(item){
+				// var key1 = typeof item !== 'undefined' ? item.key : '';
+				// if(key1 == key){
+				if(item.key == key){
+					objArr.splice(objArr.indexOf(item),1);
+				}
+			})
+		})
+
+		// react里的方法
+		//_.map(data, (item) => {
+	    //    _.each(selectedRowKeys, (value) => {
+	    //        if(item.key==value){
+	    //        	data = _.without(data,item);
+	    //        }
+        //	})
+        //})
+
+
+		console.log(objArr);
+
+
+		//数组去重
+		var arr2 = [112,112,34,'你好',112,112,34,'你好','str','str1'];
+		var newArray = [];
+		var obj = {};
+
+		for(var i = 0; i < arr2.length; i++){
+			if(!obj[arr2[i]]){
+				newArray.push(arr2[i]);
+				obj[arr2[i]] = 1;
+			}
+		}
+		console.log(newArray);
+	</script>
+</body>
+</html>

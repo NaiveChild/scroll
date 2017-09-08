@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>过渡</title>
+	<link rel="stylesheet" href="">
+	<style>
+		/*网址：http://www.cnblogs.com/xiaohuochai/p/5347930.html*/
+		/*transition-property: 过渡属性(默认值为all)
+		transition-duration: 过渡持续时间(默认值为0s)
+		transiton-timing-function: 过渡函数(默认值为ease函数)
+		transition-delay: 过渡延迟时间(默认值为0s)*/
+
+		/*ease: 开始和结束慢，中间快。相当于cubic-bezier(0.25,0.1,0.25,1)
+		linear: 匀速。相当于cubic-bezier(0,0,1,1)
+		ease-in: 开始慢。相当于cubic-bezier(0.42,0,1,1)
+		ease-out: 结束慢。相当于cubic-bezier(0,0,0.58,1)
+		ease-in-out: 和ease类似，但比ease幅度大。相当于cubic-bezier(0.42,0,0.58,1)
+		step-start: 直接位于结束处。相当于steps(1,start)
+		step-end: 位于开始处经过时间间隔后结束。相当于steps(1,end)*/
+		.test{
+			width: 300px;
+			height: 100px;
+			background-color: pink;
+			transition: width 2s,background-color 2s 3s;
+		}
+		.test:hover{
+			width: 100px;
+			background-color: lightblue;
+		}
+
+		.test1{
+			margin-top: 10px;
+			width: 300px;
+			height: 100px;
+			background-color: pink;
+			/*transition: all 1s step-start;*/
+			/*transition: all 1s step-end;*/
+			/*transition: all 1s steps(3, start);*/
+			transition: all 1s steps(3, end);
+		}
+		.test1:hover{
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="test"></div>
+	<div class="test1"></div>
+</body>
+</html>

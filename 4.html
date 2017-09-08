@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css3 渐变</title>
+	<link rel="stylesheet" href="">
+	<style>
+		.test{
+			position: absolute;
+			left: 50%;
+			width: 90px;
+			height: 300px;
+			/*简单渐变*/
+			/*background: -webkit-linear-gradient(left, rgba(0,0,0,0) ,#00dfff ,rgba(0,0,0,0)); */
+			/*4=2+2  重复渐变  透明2px #00dfff 2px*/
+			/*background: repeating-linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0) 2px, #00dfff 2px, #00dfff 4px);*/
+			/*10=5+5  重复渐变  红5px  粉5px*/
+			/*background: repeating-linear-gradient(90deg, red, red 5px, pink 5px, pink 10px);*/
+			/*缺角实现  角度 大小  颜色*/
+			background: linear-gradient(135deg,transparent 20px,#00dfff 0);
+		}
+	</style>
+</head>
+<body>
+	<div class="test">
+		
+	</div>
+</body>
+</html>

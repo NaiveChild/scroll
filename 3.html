@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>还是滚动条</title>
+	<link rel="stylesheet" href="">
+	<script src="jquery-2.1.0.min.js"></script>
+	<style>
+		.mydiv{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			overflow: auto;
+			/*滚动条的z-index和包含它的div一样*/
+			z-index: 10;
+		}
+		.mydiv::-webkit-scrollbar{
+			/*background-color: pink;*/
+			background-color: rgba(0,0,0,0);
+			/*z-index: 10;*/
+		}
+		.mydiv::-webkit-scrollbar-thumb{
+			background-color: red;
+		}
+		.line{
+			position: absolute;
+			right: 0;
+			background-color: yellow;
+			height: 200px;
+			width: 2px;
+			top: 0;
+			z-index: 2;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="mydiv">
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+		<p>233</p>
+	</div>
+	<div class="line"></div>
+	<script>
+		// 获取内容高度
+		var height=$('.mydiv')[0].scrollHeight;
+		console.log(height);
+		console.log($('.mydiv'))
+	</script>
+</body>
+</html>
